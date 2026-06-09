@@ -200,7 +200,8 @@ Prendre Rendez-vous</a>
 <div class="video-grid">
 <div class="video-card"><video src="video-hydrafacial.mp4" controls playsinline preload="metadata"></video></div>
 <div class="video-card"><video src="video-work1.mp4" controls playsinline preload="metadata"></video></div>
-<div class="video-card"><video src="video-work2.mp4" controls playsinline preload="metadata"></video></div>
+<div class="video-card"><video src="video-new1.mp4" controls playsinline preload="metadata"></video></div>
+<div class="video-card"><video src="video-new2.mp4" controls playsinline preload="metadata"></video></div>
 </div>
 </section>
 
@@ -294,5 +295,77 @@ function setLang(lang) {
   document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
 }
 </script>
+
+<button id="music-btn" onclick="toggleMusic()" style="position:fixed;bottom:20px;right:20px;z-index:999;background:rgba(196,162,101,0.9);color:#fff;border:none;padding:12px 16px;border-radius:50px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.15);backdrop-filter:blur(10px)">🎵 Musique</button>
+<script>
+let audioCtx, isPlaying = false, nodes = [];
+function createSpaMusic() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const master = audioCtx.createGain();
+  master.gain.value = 0.12;
+  master.connect(audioCtx.destination);
+  
+  // Soft pad chord - C major 7
+  [261.63, 329.63, 392.00, 493.88].forEach((freq, i) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+    osc.type = 'sine';
+    osc.frequency.value = freq * 0.5;
+    filter.type = 'lowpass';
+    filter.frequency.value = 400;
+    filter.Q.value = 1;
+    gain.gain.value = 0.15;
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(master);
+    // Gentle vibrato
+    const lfo = audioCtx.createOscillator();
+    const lfoGain = audioCtx.createGain();
+    lfo.frequency.value = 0.3 + i * 0.1;
+    lfoGain.gain.value = 2;
+    lfo.connect(lfoGain);
+    lfoGain.connect(osc.frequency);
+    lfo.start();
+    osc.start();
+    nodes.push(osc, lfo);
+  });
+  
+  // Soft white noise for water/wind effect
+  const bufferSize = audioCtx.sampleRate * 2;
+  const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.02;
+  const noise = audioCtx.createBufferSource();
+  noise.buffer = buffer;
+  noise.loop = true;
+  const noiseFilter = audioCtx.createBiquadFilter();
+  noiseFilter.type = 'lowpass';
+  noiseFilter.frequency.value = 500;
+  const noiseGain = audioCtx.createGain();
+  noiseGain.gain.value = 0.3;
+  noise.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(master);
+  noise.start();
+  nodes.push(noise);
+}
+function toggleMusic() {
+  const btn = document.getElementById('music-btn');
+  if (!isPlaying) {
+    if (!audioCtx) createSpaMusic();
+    else audioCtx.resume();
+    isPlaying = true;
+    btn.textContent = '🎵 Pause';
+    btn.style.background = 'rgba(74,55,40,0.9)';
+  } else {
+    audioCtx.suspend();
+    isPlaying = false;
+    btn.textContent = '🎵 Musique';
+    btn.style.background = 'rgba(196,162,101,0.9)';
+  }
+}
+</script>
+
 </body>
 </html>

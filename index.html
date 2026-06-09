@@ -122,17 +122,25 @@ footer a{color:var(--gold);text-decoration:none}
 </head>
 <body>
 
+<!-- LANGUAGE SWITCHER -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(74,55,40,0.95);display:flex;justify-content:center;gap:16px;padding:10px 20px;backdrop-filter:blur(10px)">
+<button onclick="setLang('fr')" id="btn-fr" style="background:var(--gold);color:#fff;border:none;padding:6px 16px;border-radius:20px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer">🇫🇷 Français</button>
+<button onclick="setLang('en')" id="btn-en" style="background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 16px;border-radius:20px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer">🇬🇧 English</button>
+<button onclick="setLang('ar')" id="btn-ar" style="background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.3);padding:6px 16px;border-radius:20px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer">🇸🇦 العربية</button>
+</div>
+<div style="height:44px"></div>
+
 <!-- HERO -->
 <section class="hero">
 <img src="skinlab-logo.jpeg" alt="SkinLab by Sam" style="width:140px;height:auto;margin-bottom:20px;animation:fadeUp .8s ease-out;border-radius:50%">
-<div class="sparkle">✨ Esthétique Professionnelle ✨</div>
+<div class="sparkle" data-fr="✨ Esthétique Professionnelle ✨" data-en="✨ Professional Aesthetics ✨" data-ar="✨ تجميل احترافي ✨">✨ Esthétique Professionnelle ✨</div>
 <h1>SkinLab <em>by Sam</em></h1>
-<p class="tagline">Révélez la beauté de votre peau</p>
+<p class="tagline" data-fr="Révélez la beauté de votre peau" data-en="Reveal your skin's beauty" data-ar="اكشفي جمال بشرتك">Révélez la beauté de votre peau</p>
 <p class="location">📍 Cité Bouyahiaoui, Boudouaou, Boumerdès</p>
 <a href="https://wa.me/213661928190?text=Bonjour%20SkinLab%2C%20je%20souhaite%20prendre%20rendez-vous" class="cta-wa" target="_blank">
 <svg class="wa-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 Prendre Rendez-vous</a>
-<p class="hero-sub">Réponse rapide · Produits européens · Résultats garantis</p>
+<p class="hero-sub" data-fr="Réponse rapide · Produits européens · Résultats garantis" data-en="Fast response · European products · Guaranteed results" data-ar="استجابة سريعة · منتجات أوروبية · نتائج مضمونة">Réponse rapide · Produits européens · Résultats garantis</p>
 </section>
 
 <!-- BADGES -->
@@ -145,8 +153,8 @@ Prendre Rendez-vous</a>
 
 <!-- TREATMENTS: SOINS VISAGE -->
 <section class="section">
-<div class="section-label">Nos Soins Visage</div>
-<h2>Des soins sur mesure pour<br>une peau parfaite</h2>
+<div class="section-label" data-fr="Nos Soins Visage" data-en="Face Treatments" data-ar="علاجات الوجه">Nos Soins Visage</div>
+<h2 data-fr="Des soins sur mesure pour" data-en="Tailored treatments for" data-ar="علاجات مخصصة من أجل">Des soins sur mesure pour<br data-fr="une peau parfaite" data-en="perfect skin" data-ar="بشرة مثالية">une peau parfaite</h2>
 <div class="treatments">
 <div class="treatment"><div class="treatment-info"><h3>Hydrafacial</h3><div class="desc">Nettoyage en profondeur et hydratation intense</div></div><div class="treatment-price"><div class="price">5 500 DA</div></div></div>
 <div class="treatment"><div class="treatment-info"><h3>Hydrafacial + Scanner de Peau</h3><div class="desc">Analyse personnalisée + soin complet</div></div><div class="treatment-price"><div class="price">6 000 DA</div></div></div>
@@ -159,8 +167,8 @@ Prendre Rendez-vous</a>
 
 <!-- TREATMENTS: REGARD -->
 <section class="section" style="padding-top:0">
-<div class="section-label">Beauté du Regard</div>
-<h2>Sublimez vos yeux</h2>
+<div class="section-label" data-fr="Beauté du Regard" data-en="Eye Beauty" data-ar="جمال العيون">Beauté du Regard</div>
+<h2 data-fr="Sublimez vos yeux" data-en="Enhance your eyes" data-ar="أبرزي جمال عينيك">Sublimez vos yeux</h2>
 <div class="treatments">
 <div class="treatment"><div class="treatment-info"><h3>Rehaussement de Cils</h3><div class="desc">Cils naturellement courbés et sublimés</div></div><div class="treatment-price"><div class="price">2 800 DA</div><div class="new-tag">Nouveau</div></div></div>
 <div class="treatment"><div class="treatment-info"><h3>Brow Lift + Décoloration et Teinture</h3><div class="desc">Sourcils sculptés et définis</div></div><div class="treatment-price"><div class="price">2 800 DA</div><div class="new-tag">Nouveau</div></div></div>
@@ -170,23 +178,36 @@ Prendre Rendez-vous</a>
 
 <!-- GALLERY -->
 <section class="gallery-section">
-<div class="section-label">Nos Résultats</div>
-<h2>Des transformations qui parlent<br>d'elles-mêmes</h2>
+<div class="section-label" data-fr="Nos Résultats" data-en="Our Results" data-ar="نتائجنا">Nos Résultats</div>
+<h2 data-fr="Des transformations qui parlent" data-en="Transformations that speak" data-ar="تحولات تتحدث">Des transformations qui parlent<br data-fr="d'elles-mêmes" data-en="for themselves" data-ar="عن نفسها">d'elles-mêmes</h2>
 <div class="gallery-grid">
-<div class="gallery-card"><img src="photo-botox.png" alt="Botox Avant/Après"><div class="card-label">Botox</div></div>
-<div class="gallery-card"><img src="photo-cils.png" alt="Rehaussement de Cils"><div class="card-label">Rehaussement de Cils</div></div>
-<div class="gallery-card"><img src="photo-peeling.png" alt="Hydrafacial et Peeling Intelligent"><div class="card-label">Hydrafacial et Peeling Intelligent</div></div>
-<div class="gallery-card"><img src="photo-hydrafacial.png" alt="Hydrafacial"><div class="card-label">Hydrafacial</div></div>
-<div class="gallery-card"><img src="photo-browlift.png" alt="Brow Lift"><div class="card-label">Brow Lift</div></div>
+<div class="gallery-card"><img src="photo-hydrafacial.png" alt="Hydrafacial"><div class="card-label" data-fr="Hydrafacial" data-en="Hydrafacial" data-ar="هيدرافيشيال">Hydrafacial</div></div>
+<div class="gallery-card"><img src="photo-peeling.png" alt="Hydrafacial et Peeling Intelligent"><div class="card-label" data-fr="Hydrafacial et Peeling Intelligent" data-en="Hydrafacial & Intelligent Peeling" data-ar="هيدرافيشيال والتقشير الذكي">Hydrafacial et Peeling Intelligent</div></div>
+<div class="gallery-card"><img src="photo-botox.png" alt="Botox"><div class="card-label" data-fr="Botox" data-en="Botox" data-ar="بوتوكس">Botox</div></div>
+<div class="gallery-card"><img src="photo-botox2.jpeg" alt="Botox Avant/Après"><div class="card-label" data-fr="Botox — Avant/Après" data-en="Botox — Before/After" data-ar="بوتوكس — قبل/بعد">Botox — Avant/Après</div></div>
+<div class="gallery-card"><img src="photo-cils.png" alt="Rehaussement de Cils"><div class="card-label" data-fr="Rehaussement de Cils" data-en="Lash Lift" data-ar="رفع الرموش">Rehaussement de Cils</div></div>
+<div class="gallery-card"><img src="photo-browlift.png" alt="Brow Lift"><div class="card-label" data-fr="Brow Lift" data-en="Brow Lift" data-ar="رفع الحواجب">Brow Lift</div></div>
 </div>
 </section>
 
 
 
+
+<!-- VIDEOS -->
+<section class="section">
+<div class="section-label" data-fr="Notre Travail" data-en="Our Work" data-ar="أعمالنا">Notre Travail</div>
+<h2 data-fr="Découvrez nos soins en vidéo" data-en="Watch our treatments in action" data-ar="شاهدي علاجاتنا بالفيديو">Découvrez nos soins en vidéo</h2>
+<div class="video-grid">
+<div class="video-card"><video src="video-hydrafacial.mp4" controls playsinline preload="metadata"></video></div>
+<div class="video-card"><video src="video-work1.mp4" controls playsinline preload="metadata"></video></div>
+<div class="video-card"><video src="video-work2.mp4" controls playsinline preload="metadata"></video></div>
+</div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials-section">
-<div class="section-label">Avis Clients</div>
-<h2>Ce que disent nos clientes</h2>
+<div class="section-label" data-fr="Avis Clients" data-en="Client Reviews" data-ar="آراء العملاء">Avis Clients</div>
+<h2 data-fr="Ce que disent nos clientes" data-en="What our clients say" data-ar="ماذا تقول عميلاتنا">Ce que disent nos clientes</h2>
 <div class="testimonial-grid">
 <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="quote">"Je suis très satisfaite des résultats, merci beaucoup ! Hyper gentille, elle m'a expliqué tous les détails et m'a donné des conseils précieux."</div><div class="author">— Cliente vérifiée</div></div>
 <div class="testimonial-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="quote">"Très satisfaite de la prestation. Merci pour votre professionnalisme et votre gentillesse. Depuis que je suis venue, je n'arrête pas de me regarder !"</div><div class="author">— Ikram M.</div></div>
@@ -199,11 +220,11 @@ Prendre Rendez-vous</a>
 
 <!-- COURSES -->
 <section class="courses-section">
-<div class="section-label">Formations Professionnelles</div>
-<h2>Devenez experte en esthétique</h2>
+<div class="section-label" data-fr="Formations Professionnelles" data-en="Professional Training" data-ar="التدريب المهني">Formations Professionnelles</div>
+<h2 data-fr="Devenez experte en esthétique" data-en="Become an aesthetics expert" data-ar="كوني خبيرة في التجميل">Devenez experte en esthétique</h2>
 <p class="sub">Formations certifiées en ligne et en présentiel. Apprenez les techniques professionnelles avec Sam et lancez votre carrière.</p>
 <div class="course-grid">
-<div class="course-card"><div class="card-icon">💻</div><h3>Rehaussement de Cils</h3><div class="course-price">4 000 DA</div><p>Formation en ligne complète avec support vidéo et suivi personnalisé</p><div class="badge-cert">En ligne · Certificat</div></div>
+<div class="course-card"><div class="card-icon">💻</div><h3>Rehaussement de Cils</h3><div class="course-price">6 000 DA</div><p>Formation en ligne complète avec support vidéo et suivi personnalisé</p><div class="badge-cert">En ligne · Certificat</div></div>
 <div class="course-card"><div class="card-icon">💻</div><h3>Hydrafacial</h3><div class="course-price">8 900 DA</div><p>Maîtrisez la technique Hydrafacial avec formation en ligne détaillée</p><div class="badge-cert">En ligne · Certificat</div></div>
 <div class="course-card"><div class="card-icon">🏫</div><h3>Rehaussement de Cils</h3><div class="course-price">10 000 DA</div><p>Formation pratique en présentiel avec modèle et supervision directe</p><div class="badge-cert">Présentiel · Certificat</div></div>
 <div class="course-card"><div class="card-icon">🏫</div><h3>Hydrafacial</h3><div class="course-price">18 000 DA</div><p>Formation complète en présentiel avec pratique sur modèles et certification</p><div class="badge-cert">Présentiel · Certificat</div></div>
@@ -212,8 +233,8 @@ Prendre Rendez-vous</a>
 
 <!-- WHY -->
 <section class="why-section">
-<div class="section-label">Pourquoi SkinLab</div>
-<h2>Votre peau mérite le meilleur</h2>
+<div class="section-label" data-fr="Pourquoi SkinLab" data-en="Why SkinLab" data-ar="لماذا SkinLab">Pourquoi SkinLab</div>
+<h2 data-fr="Votre peau mérite le meilleur" data-en="Your skin deserves the best" data-ar="بشرتك تستحق الأفضل">Votre peau mérite le meilleur</h2>
 <div class="why-grid">
 <div class="why-card"><div class="card-icon">🇪🇺</div><h3>Produits Originaux</h3><p>Uniquement des produits européens certifiés et originaux pour votre sécurité</p></div>
 <div class="why-card"><div class="card-icon">👩‍⚕️</div><h3>Expertise</h3><p>Des soins personnalisés adaptés à chaque type de peau</p></div>
@@ -224,14 +245,14 @@ Prendre Rendez-vous</a>
 
 <!-- HOW TO BOOK -->
 <section class="booking-section">
-<div class="section-label">Prendre Rendez-vous</div>
-<h2>Comment réserver ?</h2>
+<div class="section-label" data-fr="Prendre Rendez-vous" data-en="Book Appointment" data-ar="حجز موعد">Prendre Rendez-vous</div>
+<h2 data-fr="Comment réserver ?" data-en="How to book?" data-ar="كيفية الحجز؟">Comment réserver ?</h2>
 <div class="booking-steps">
 <div class="booking-step"><div class="step-num">1</div><div class="step-content"><h3>Choisissez votre soin</h3><p>Parcourez notre liste de soins et choisissez celui qui vous convient</p></div></div>
 <div class="booking-step"><div class="step-num">2</div><div class="step-content"><h3>Réservez en ligne ou sur WhatsApp</h3><p>Cliquez sur le bouton ci-dessous pour choisir votre créneau ou envoyez-nous un message</p></div></div>
 <div class="booking-step"><div class="step-num">3</div><div class="step-content"><h3>Venez et profitez</h3><p>Présentez-vous à votre rendez-vous et laissez-nous prendre soin de vous</p></div></div>
 </div>
-<a href="https://calendly.com/skinlabbysam/30min" class="cta-book" target="_blank">📅 Réserver en Ligne</a>
+<a href="https://calendly.com/skinlabbysam/30min" class="cta-book" target="_blank" data-fr="📅 Réserver en Ligne" data-en="📅 Book Online" data-ar="📅 الحجز عبر الإنترنت">📅 Réserver en Ligne</a>
 <a href="https://wa.me/213661928190?text=Bonjour%20SkinLab%2C%20je%20souhaite%20prendre%20rendez-vous" class="cta-wa" target="_blank" style="animation:none">
 <svg class="wa-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 Réserver sur WhatsApp</a>
@@ -241,7 +262,7 @@ Réserver sur WhatsApp</a>
 <section class="final-cta">
 <h2>Prête à révéler <em>votre éclat?</em></h2>
 <p class="sub">Prenez rendez-vous et découvrez le soin parfait pour votre peau. Consultation personnalisée offerte.</p>
-<a href="tel:+213661928190" class="cta-call">📞 Appeler Directement</a>
+<a href="tel:+213661928190" class="cta-call" data-fr="📞 Appeler Directement" data-en="📞 Call Directly" data-ar="📞 اتصلي مباشرة">📞 Appeler Directement</a>
 <br>
 <a href="https://www.instagram.com/skinlab_bysam/" class="ig-link" target="_blank">📸 Suivez-nous sur Instagram — @skinlab_bysam</a>
 </section>
@@ -254,5 +275,24 @@ Réserver sur WhatsApp</a>
 <p style="margin-top:12px;font-size:12px">© 2026 SkinLab by Sam — Propulsé par <a href="https://kaai-solution.carrd.co" target="_blank">KAAI Solution</a></p>
 </footer>
 
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-'+lang+']').forEach(el => {
+    el.textContent = el.getAttribute('data-'+lang);
+  });
+  // Update button styles
+  ['fr','en','ar'].forEach(l => {
+    const btn = document.getElementById('btn-'+l);
+    if(l===lang) {
+      btn.style.background='var(--gold)';btn.style.color='#fff';btn.style.border='none';
+    } else {
+      btn.style.background='transparent';btn.style.color='var(--cream)';btn.style.border='1px solid rgba(255,255,255,0.3)';
+    }
+  });
+  // Set RTL for Arabic
+  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+}
+</script>
 </body>
 </html>
